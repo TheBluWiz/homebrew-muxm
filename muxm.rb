@@ -7,16 +7,16 @@ class Muxm < Formula
   desc "Universal video encoder/muxer for DV, HDR10, HLG, and SDR with format profiles"
   homepage "https://github.com/TheBluWiz/MuxMaster"
   url "https://github.com/TheBluWiz/MuxMaster/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "PLACEHOLDER_SHA256"
+  sha256 "6bd97e0114a3854e2e7a42b1d25d0ef9cdfc3582b186c173c874840969fcb85c"
   license :cannot_represent # MuxMaster Freeware License v1.0.0
 
   depends_on "bash"   # macOS ships bash 3.2; muxm requires 4.3+
   depends_on "jq"
   depends_on :macos   # tested primarily on macOS; Linux users install differently
 
-  # ffmpeg is required but users may want the homebrew-ffmpeg tap build
-  # (--with-libass) for subtitle burn-in. We depend on core ffmpeg and
-  # note the libass upgrade path in caveats.
+  # ffmpeg is required but users may want the homebrew-ffmpeg-full tap 
+  # build (--with-libass) for subtitle burn-in. We depend on core ffmpeg 
+  # and note the libass upgrade path in caveats.
   depends_on "ffmpeg"
 
   # Optional but recommended — gracefully disabled at runtime if missing
