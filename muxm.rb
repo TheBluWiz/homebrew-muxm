@@ -51,10 +51,12 @@ class Muxm < Formula
         brew install tesseract         # PGS subtitle OCR
 
       For subtitle burn-in (--sub-burn-forced), ffmpeg must be built with
-      libass. If you need this feature:
+      libass. The simplest option:
 
-        brew tap homebrew-ffmpeg/ffmpeg
-        brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-libass
+        brew install ffmpeg-full       # includes libass + tesseract
+        brew link --force ffmpeg-full  # keg-only — must be linked manually
+
+      Or run: muxm --install-dependencies
     EOS
   end
 

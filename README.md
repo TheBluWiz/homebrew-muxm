@@ -34,9 +34,11 @@ brew install tesseract    # PGS subtitle OCR engine
 For subtitle burn-in (`--sub-burn-forced`), ffmpeg needs libass:
 
 ```bash
-brew tap homebrew-ffmpeg/ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-libass
+brew install ffmpeg-full          # includes libass + tesseract
+brew link --force ffmpeg-full     # keg-only — must be linked manually
 ```
+
+Or run `muxm --install-dependencies` to handle everything automatically.
 
 ## Update
 
