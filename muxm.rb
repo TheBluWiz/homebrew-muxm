@@ -14,17 +14,15 @@ class Muxm < Formula
   depends_on "jq"
   depends_on :macos   # tested primarily on macOS; Linux users install differently
 
-  # ffmpeg is required but users may want the homebrew-ffmpeg-full tap 
-  # build (--with-libass) for subtitle burn-in. We depend on core ffmpeg 
-  # and note the libass upgrade path in caveats.
+  # ffmpeg is required but users may want the homebrew-ffmpeg tap build
+  # (--with-libass) for subtitle burn-in. We depend on core ffmpeg and
+  # note the libass upgrade path in caveats.
   depends_on "ffmpeg"
 
-  # Optional but recommended — gracefully disabled at runtime if missing
-  resource "optional_note" do
-    # These are not declared as depends_on because muxm auto-disables
-    # features when they're absent. Users can install as needed:
-    #   brew install dovi_tool gpac tesseract
-  end
+  # Optional but recommended — gracefully disabled at runtime if missing.
+  # These are not declared as depends_on because muxm auto-disables
+  # features when they're absent. Users can install as needed:
+  #   brew install dovi_tool gpac tesseract
 
   def install
     # Rewrite shebang from /usr/bin/env bash to Homebrew's bash 4.3+
@@ -35,8 +33,8 @@ class Muxm < Formula
   end
 
   def post_install
-    # Install man page and tab completion via muxm's built-in installers.
-    # These detect brew --prefix automatically and write to the correct paths.
+    # Install man page via muxm's built-in installer.
+    # Detects brew --prefix automatically and writes to the correct path.
     system bin/"muxm", "--install-man"
   end
 
