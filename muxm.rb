@@ -57,7 +57,6 @@ class Muxm < Formula
       libass. The simplest option:
 
         brew install ffmpeg-full       # includes libass + tesseract
-        brew link --force ffmpeg-full  # keg-only — must be linked manually
 
       Or run: muxm --install-dependencies
     EOS
