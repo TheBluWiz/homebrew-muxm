@@ -36,6 +36,9 @@ class Muxm < Formula
     # Install man page via muxm's built-in installer.
     # Detects brew --prefix automatically and writes to the correct path.
     system bin/"muxm", "--install-man"
+
+    # Refresh tab completions so new flags are available after every upgrade.
+    system bin/"muxm", "--install-completions"
   end
 
   def caveats
